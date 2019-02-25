@@ -1,0 +1,14 @@
+version: '2'
+services:
+  db:
+    image: "postgres"
+  web:
+    restart: always
+    build: .
+    command: bash -c "python3 manage.py migrate ; python3 manage.py runserver 0.0.0.0:8000"
+    ports: 
+      - "8000:8000"
+    links:
+      - db:db
+    depends_on:
+      - db

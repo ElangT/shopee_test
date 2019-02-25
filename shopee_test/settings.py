@@ -78,10 +78,9 @@ WSGI_APPLICATION = 'shopee_test.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tax_calculator',
-        'USER': 'elang',
-        'PASSWORD': 'prayogotok',
-        'HOST': 'localhost',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'db',
         'PORT': 5432,
     }
 }

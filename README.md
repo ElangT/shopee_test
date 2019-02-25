@@ -1,12 +1,9 @@
-TODO:
-Set up psql
+# Asumsi
 
-Set up model (copas gojek)
-Set up get representation (copas gojek)
+- Tidak membuat tampilan sama sekali. Namun terdapat tampilan dari drf untuk easy access yang dapat dilihat pada localhost:8000/api/tax
 
-Actually kodenya copas gojek aja
+- Sebenarnya sempat terpikir untuk membuat entity user dan menghubungkannya dengan foreign key terhadap tax. Akan tetapi karena metode yang digunakan adalah user stories, saya mengambil asumsi bahwa tugas pembuatan user (login, register dsb) dibagi pada user stories lain dan baru akan diintegrasi nanti dengan API yang saya buat.
 
-Tambahin Test
-Tambahin Dokumentasi
+# Note
 
-psql -U elang -d postgres -c "CREATE DATABASE tax_calculator;"
+- Dokumentasi (sederhana) dapat ditemukan di localhost:8000/api/tax

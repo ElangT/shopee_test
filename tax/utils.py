@@ -1,5 +1,4 @@
 from tax.models import TAX_CODE
-import abc
 
 
 def count_tax_food(price):
@@ -11,10 +10,9 @@ def count_tax_tobacco(price):
 
 
 def count_tax_entertainment(price):
-    if(price < 100 and price > 0):
+    if price < 100 and price > 0:
         return 0
-    else:
-        return (price-100)*0.01
+    return (price-100)*0.01
 
 
 TAX_PRICE = {

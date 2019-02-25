@@ -6,12 +6,13 @@ from tax.utils import TaxHandler
 class TaxSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=50)
     tax_code = serializers.IntegerField()
-    price = serializers.IntegerField()
+    price = serializers.IntegerField(min_value=0)
 
     def validate(self, data):
         if data['tax_code'] not in TAX_CODE:
-            raise serializers.ValidationError("tax code must be " +
-                                              "".join(TAX_CODE.keys()))
+            raise serializers.ValidationError("tax code must be either" +
+                                              ", ".
+                                              join([str(x) for x in TAX_CODE]))
         return data
 
     def create(self, validated_data):

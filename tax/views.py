@@ -12,6 +12,37 @@ from tax.utils import TaxHandler
 
 
 class TaxViewSet(viewsets.GenericViewSet):
+    """
+    Method Documentation
+
+    list:
+    Return a list of all the tax object. Count it's total price, total tax
+    and total amount
+
+    create:
+    Create a new tax instance.
+
+    retrieve:
+    Return a tax object with given id.
+
+    update:
+    Update a tax object with given id.
+
+    delete:
+    Delete a tax object with given id.
+
+    Parameter
+
+    Name (Char, max 50 character)
+
+    Price (Integer)
+
+    Tax Code (Integer, 1-3)
+    1: food
+    2: tobacco
+    3: entertainment
+
+    """
     permission_classes = (AllowAny,)
     queryset = Tax.objects.all()
     serializer_class = TaxSerializer
